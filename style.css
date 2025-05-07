@@ -737,11 +737,10 @@ nav ul {
   top: 0;
   width: 180px;
   height: 55%;
-  background-color: hsl(168, 100%, 98%);
-  box-shadow: -2px 0 5px hwb(169 0% 82% / 0.658);
+  background-color: hwb(160 18% 5%);
+  box-shadow: -2px 0 5px hwb(168 0% 82% / 0.863);
   transition: right 0.3s ease;
   z-index: 1500;
-  padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -760,7 +759,7 @@ nav ul {
 .side-menu ul li button {
   font-size: 18px;
   text-decoration: none;
-  color: #00382c;
+  color: rgb(0, 56, 44);
 }
 
 .side-menu .dropdown-menu {
