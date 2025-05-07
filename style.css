@@ -737,7 +737,7 @@ nav ul {
     right: 1rem;
     top: 1.2rem;
     color: hsl(161, 56%, 16%);
-    padding-right: 15px;
+    padding-right: 20px;
     padding-top: 5px;
   }
 
@@ -746,12 +746,13 @@ nav ul {
     flex-direction: column;
     padding: 0;
     margin: 0;
-    gap: 15px;
+    gap: 10px;
   }
 
   nav ul li {
     padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 20px;
+    border-bottom: 1px solid #ffffff;
   }
 
 
@@ -764,7 +765,7 @@ nav ul {
     width: 230px;
     background-color: hsl(149, 54%, 81%); /* Dark Green */
     color: #004937;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
     transition: right 0.3s ease-in-out;
     z-index: 2000;
     box-shadow: -2px 0 5px #0000001e;
@@ -836,10 +837,10 @@ nav ul {
     display: block;
   }
 }
-  
 
 .close-feedback-button,
 .close-button,
 .close-menu {
   cursor: pointer;
 }
+
