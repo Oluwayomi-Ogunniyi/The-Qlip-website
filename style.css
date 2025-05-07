@@ -736,12 +736,15 @@ nav ul {
   right: -100%;
   top: 0;
   width: 180px;
-  height: 50%;
-  background-color: hsl(165, 94%, 87%);
-  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  height: 55%;
+  background-color: hsl(168, 100%, 98%);
+  box-shadow: -2px 0 5px hsl(165, 94%, 87%);
   transition: right 0.3s ease;
   z-index: 1500;
-  padding: 30px 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .side-menu ul {
