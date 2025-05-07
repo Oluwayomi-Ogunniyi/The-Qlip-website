@@ -735,8 +735,8 @@ nav ul {
   position: fixed;
   right: -100%;
   top: 0;
-  width: 200px;
-  height: 100%;
+  width: 180px;
+  height: 50%;
   background-color: hsl(165, 94%, 87%);
   box-shadow: -2px 0 5px rgba(0,0,0,0.1);
   transition: right 0.3s ease;
@@ -779,7 +779,7 @@ nav ul {
 
 @media screen and (max-width: 768px) {
   nav ul {
-    display: none; /* Hide original nav */
+    display: flex; /* Hide original nav */
   }
   .hamburger {
     display: block;
