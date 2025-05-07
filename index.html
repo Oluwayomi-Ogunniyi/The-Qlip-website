@@ -16,38 +16,45 @@
 </head>
 <body>
 
-    <header>
-        <div class="header-logo">
-            <img src="images/logo.png" alt="The Qlip Logo" class="logo-image">
-          </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home <span class="dot">&#8226;</span></a></li>
-                <li class="dropdown">
-                    <a href="#">Products <span class="arrow">&#9662;</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="WebsiteTemplate.html">Website Templates</a></li>
-                        <li><a href="WebsiteBuilder.html">Website Builder</a></li>
-                        <li><a href="WebsiteDesign.html">Website Design</a></li>
-                        <li><a href="WebsiteHosting.html">Web Hosting</a></li>
-                        <li><a href="DomainName.html">Domain Names</a></li>
-                        <li><a href="WebsiteAccessibility.html">Website Accessibility</a></li>
-                        <li><a href="GraphicDesign.html">Graphic Design</a></li>
-                        <li><a href="MotionGraphics.html">Motion Graphics</a></li>
-                    </ul>
-                </li>
-                
-                <li class="dropdown">
-                    <a href="#">Contact <span class="arrow">&#9662;</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://wa.me/2347087342882">Customer Service</a></li>
-                        <li><a href="#" id="feedback-link">Feedbacks & Complains</a></li>
-                    </ul>
-                </li>
-                <li><button class="cta-button">Get Started</button></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="header-logo">
+      <img src="images/logo.png" alt="The Qlip Logo" class="logo-image">
+    </div>
+  
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+  
+    <!-- Slide-in Nav Menu -->
+    <nav class="side-menu" id="sideMenu">
+      <span class="close-menu" id="closeMenu">&times;</span>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Products <span class="arrow">&#9662;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="WebsiteTemplate.html">Website Templates</a></li>
+            <li><a href="WebsiteBuilder.html">Website Builder</a></li>
+            <li><a href="WebsiteDesign.html">Website Design</a></li>
+            <li><a href="WebsiteHosting.html">Web Hosting</a></li>
+            <li><a href="DomainName.html">Domain Names</a></li>
+            <li><a href="WebsiteAccessibility.html">Website Accessibility</a></li>
+            <li><a href="GraphicDesign.html">Graphic Design</a></li>
+            <li><a href="MotionGraphics.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Contact <span class="arrow">&#9662;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://wa.me/2347087342882">Customer Service</a></li>
+            <li><a href="#" id="feedback-link-slide">Feedbacks & Complains</a></li>
+          </ul>
+        </li>
+        <li><button class="cta-button">Get Started</button></li>
+      </ul>
+    </nav>
+  </header>
 
     <section class="hero">
         <video autoplay muted loop playsinline class="hero-video">
@@ -271,6 +278,34 @@
         });
     });
   </script>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const sideMenu = document.getElementById('sideMenu');
+  const closeMenu = document.getElementById('closeMenu');
+
+  hamburger.addEventListener('click', () => {
+    sideMenu.style.right = '0';
+  });
+
+  closeMenu.addEventListener('click', () => {
+    sideMenu.style.right = '-100%';
+  });
+
+  window.addEventListener('click', function(e) {
+    if (!sideMenu.contains(e.target) && !hamburger.contains(e.target)) {
+      sideMenu.style.right = '-100%';
+    }
+  });
+
+  // Re-hook Feedback link from slide menu
+  const feedbackSlideLink = document.getElementById('feedback-link-slide');
+  feedbackSlideLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    sideMenu.style.right = '-100%';
+    document.getElementById('feedbackModal').style.display = 'block';
+  });
+</script>
   
 </body>
 
