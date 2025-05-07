@@ -720,3 +720,68 @@ nav ul {
     box-sizing: border-box;
   }
 }
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  z-index: 2000;
+}
+
+.side-menu {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  z-index: 1500;
+  padding: 30px 20px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  margin-bottom: 15px;
+}
+
+.side-menu ul li a,
+.side-menu ul li button {
+  font-size: 18px;
+  text-decoration: none;
+  color: #333;
+}
+
+.side-menu .dropdown-menu {
+  display: none;
+  margin-left: 10px;
+}
+
+.side-menu .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.side-menu .close-menu {
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    display: none; /* Hide original nav */
+  }
+  .hamburger {
+    display: block;
+  }
+}
