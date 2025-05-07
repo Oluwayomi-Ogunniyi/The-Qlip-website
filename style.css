@@ -736,7 +736,9 @@ nav ul {
     position: absolute;
     right: 1rem;
     top: 1.2rem;
-    color: #042516;
+    color: hsl(161, 56%, 16%);
+    padding-right: 15px;
+    padding-top: 5px;
   }
 
   nav ul {
@@ -762,7 +764,7 @@ nav ul {
     width: 230px;
     background-color: hsl(149, 54%, 81%); /* Dark Green */
     color: #004937;
-    padding-top: 60px;
+    padding-bottom: 50px;
     transition: right 0.3s ease-in-out;
     z-index: 2000;
     box-shadow: -2px 0 5px #0000001e;
@@ -778,7 +780,7 @@ nav ul {
     right: 25px;
     font-size: 2rem;
     cursor: pointer;
-    color: white;
+    color: rgb(255, 255, 255);
   }
 
   .side-menu ul {
@@ -789,18 +791,21 @@ nav ul {
     flex-direction: column;
     gap: 10px;
     text-align: left;
+    
   }
   
   .side-menu ul li {
     list-style: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
   }
   
   .side-menu ul li a {
-    color: white;
+    color: #003021;
     text-decoration: none;
     display: block;
     padding: 10px 0;
+    margin-bottom: 0;
   }
 
   .side-menu ul li .cta-button {
