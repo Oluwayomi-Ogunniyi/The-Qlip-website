@@ -782,6 +782,6 @@ nav ul {
     display: flex; /* Hide original nav */
   }
   .hamburger {
-    display: block;
+    display: flex;
   }
 }
