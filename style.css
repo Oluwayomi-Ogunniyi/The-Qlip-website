@@ -738,7 +738,7 @@ nav ul {
   width: 180px;
   height: 55%;
   background-color: hsl(168, 100%, 98%);
-  box-shadow: -2px 0 5px hsl(165, 94%, 87%);
+  box-shadow: -2px 0 5px hwb(169 0% 82% / 0.658);
   transition: right 0.3s ease;
   z-index: 1500;
   padding-left: 20px;
@@ -760,7 +760,7 @@ nav ul {
 .side-menu ul li button {
   font-size: 18px;
   text-decoration: none;
-  color: rgb(3, 109, 109);
+  color: #00382c;
 }
 
 .side-menu .dropdown-menu {
@@ -769,7 +769,7 @@ nav ul {
 }
 
 .side-menu .dropdown:hover .dropdown-menu {
-  display: block;
+  display: flex;
 }
 
 .side-menu .close-menu {
