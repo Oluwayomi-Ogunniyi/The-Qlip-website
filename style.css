@@ -24,6 +24,7 @@ html {
     color: #000;
     padding-left: 30px;
     padding-right: 70px;
+    height: 60px;
   }
   
   .header-logo {
@@ -721,69 +722,101 @@ nav ul {
   }
 }
 
+/* Hamburger menu - visible on mobile only */
 .hamburger {
   display: none;
-  font-size: 28px;
+  font-size: 2rem;
   cursor: pointer;
-  position: absolute;
-  top: 25px;
-  right: 20px;
-  z-index: 2000;
+  z-index: 2001;
 }
 
-.side-menu {
-  position: fixed;
-  right: -100%;
-  top: 0;
-  width: 180px;
-  height: 55%;
-  background-color: hwb(160 18% 5%);
-  box-shadow: -2px 0 5px hwb(168 0% 82% / 0.863);
-  transition: right 0.3s ease;
-  z-index: 1500;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.side-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.side-menu ul li {
-  margin-bottom: 15px;
-}
-
-.side-menu ul li a,
-.side-menu ul li button {
-  font-size: 18px;
-  text-decoration: none;
-  color: rgb(0, 56, 44);
-}
-
-.side-menu .dropdown-menu {
-  display: none;
-  margin-left: 10px;
-}
-
-.side-menu .dropdown:hover .dropdown-menu {
-  display: flex;
-}
-
-.side-menu .close-menu {
-  font-size: 24px;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-}
-
-@media screen and (max-width: 768px) {
-  nav ul {
-    display: flex; /* Hide original nav */
-  }
+@media (max-width: 1024px) {
   .hamburger {
-    display: flex;
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1.2rem;
+    color: white;
   }
+
+  nav ul {
+    display: none;
+  }
+
+  /* Slide-in side menu styles */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    background-color: #014421; /* Dark Green */
+    color: white;
+    padding-top: 60px;
+    transition: right 0.3s ease-in-out;
+    z-index: 2000;
+  }
+
+  .side-menu.active {
+    right: 0;
+  }
+
+  .side-menu .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .side-menu ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  .side-menu ul li .cta-button {
+    background-color: #0f5132;
+    border: none;
+    padding: 10px;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .side-menu ul .dropdown-menu {
+    display: none;
+    padding-left: 15px;
+  }
+
+  .side-menu ul .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+.close-menu {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .close-menu {
+    display: block;
+  }
+}
+
+.close-feedback-button {
+  cursor: pointer;
 }
