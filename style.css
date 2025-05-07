@@ -739,7 +739,6 @@ nav ul {
     color: hsl(161, 56%, 16%);
     padding-right: 20px;
     padding-top: 5px;
-    overflow-y: auto; /* Enable scrolling */
   }
 
   nav ul {
@@ -770,6 +769,8 @@ nav ul {
     transition: right 0.3s ease-in-out;
     z-index: 2000;
     box-shadow: -2px 0 5px #0000001e;
+    overflow-y: auto; /* Enable scrolling */
+    -webkit-overflow-scrolling: touch;
   }
 
   .side-menu.active {
@@ -822,6 +823,8 @@ nav ul {
   .side-menu ul .dropdown-menu {
     display: none;
     padding-left: 15px;
+    max-height: 300px; /* Optional: restrict individual dropdown height */
+    overflow-y: auto;
   }
 
   .side-menu ul .dropdown:hover .dropdown-menu {
