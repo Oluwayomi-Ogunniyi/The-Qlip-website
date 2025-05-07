@@ -114,15 +114,18 @@ const closeMenu = document.getElementById('closeMenu');
 
 hamburger.addEventListener('click', () => {
   sideMenu.classList.add('active');
+  hamburger.style.display = 'none'; // Hide hamburger when menu opens
 });
 
 closeMenu.addEventListener('click', () => {
   sideMenu.classList.remove('active');
+  hamburger.style.display = 'block'; // Show hamburger when menu closes
 });
 
 // Optional: close on outside click
 window.addEventListener('click', (e) => {
   if (e.target === sideMenu) {
     sideMenu.classList.remove('active');
+    hamburger.style.display = 'block'; // Also show it back here
   }
 });
