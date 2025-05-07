@@ -635,7 +635,7 @@ Responsive Design (Mobile & Tablet)
 
   .logo-image {
     height: 90px;
-    padding-left: 0;
+    padding-left: 10px;
   }
 
   nav {
