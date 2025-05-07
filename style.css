@@ -755,6 +755,7 @@ nav ul {
     padding-top: 60px;
     transition: right 0.3s ease-in-out;
     z-index: 2000;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
   }
 
   .side-menu.active {
@@ -785,7 +786,7 @@ nav ul {
   .side-menu ul li a {
     color: white;
     text-decoration: none;
-    display: block;
+    display: flex;
   }
 
   .side-menu ul li .cta-button {
@@ -798,12 +799,12 @@ nav ul {
   }
 
   .side-menu ul .dropdown-menu {
-    display: none;
+    display: flex;
     padding-left: 15px;
   }
 
   .side-menu ul .dropdown:hover .dropdown-menu {
-    display: block;
+    display: flex;
   }
 }
 
@@ -817,6 +818,8 @@ nav ul {
   }
 }
 
-.close-feedback-button {
+.close-feedback-button,
+.close-button,
+.close-menu {
   cursor: pointer;
 }
