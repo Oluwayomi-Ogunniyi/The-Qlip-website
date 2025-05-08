@@ -723,7 +723,9 @@ nav ul {
   }
 }
 
-/* Hamburger menu - visible on mobile only */
+/* --------------------------------
+Hamburger Menu (Mobile Navigation)
+-------------------------------- */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -742,18 +744,36 @@ nav ul {
     padding-top: 5px;
   }
 
-  nav ul {
-    display: flex;
+  nav {
+    display: none;
+    width: 100%;
+    background-color: hsl(165, 94%, 87%);
+    position: absolute;
+    top: 60px; /* header height */
+    left: 0;
     flex-direction: column;
-    padding: 0;
-    margin: 0;
-    gap: 10px;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 2000;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
   }
 
   nav ul li {
-    padding: 15px 20px;
-    padding-left: 20px;
-    border-bottom: 1px solid #ffffff;
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta-button {
+    margin: 10px auto 0;
   }
 
 
