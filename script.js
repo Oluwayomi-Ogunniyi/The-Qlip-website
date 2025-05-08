@@ -107,25 +107,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Mobile hamburger toggle
-const hamburger = document.getElementById('hamburger');
-const sideMenu = document.getElementById('sideMenu');
-const closeMenu = document.getElementById('closeMenu');
-
-hamburger.addEventListener('click', () => {
-  sideMenu.classList.add('active');
-  hamburger.style.display = 'none'; // Hide hamburger when menu opens
-});
-
-closeMenu.addEventListener('click', () => {
-  sideMenu.classList.remove('active');
-  hamburger.style.display = 'block'; // Show hamburger when menu closes
-});
-
-// Optional: close on outside click
-window.addEventListener('click', (e) => {
-  if (e.target === sideMenu) {
-    sideMenu.classList.remove('active');
-    hamburger.style.display = 'block'; // Also show it back here
-  }
-});
+// Header hamburger toggle for mobile nav
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeMenu = document.getElementById('closeMenu');
+  
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.add('active');
+    });
+  
+    closeMenu.addEventListener('click', () => {
+      sideMenu.classList.remove('active');
+    });
+  
+    window.addEventListener('click', (event) => {
+      if (event.target === sideMenu) {
+        sideMenu.classList.remove('active');
+      }
+    });
+  
+    // Close side menu on link click (optional)
+    document.querySelectorAll('#sideMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+      });
+    });
+  });
+  
