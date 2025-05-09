@@ -884,3 +884,64 @@ Hamburger Menu (Mobile Navigation)
   cursor: pointer;
 }
 
+/* --------------------------------
+Hamburger Menu (Mobile Navigation)
+-------------------------------- */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 2001;
+}
+
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1.2rem;
+    color: hsl(161, 56%, 16%);
+    padding-right: 20px;
+    padding-top: 5px;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: hsl(165, 94%, 87%);
+    z-index: 2000;
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  nav a {
+    padding: 10px 15px;
+    display: block;
+    width: 100%;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cta-button {
+    margin: 10px 0 0;
+    width: 100%;
+  }
+}
