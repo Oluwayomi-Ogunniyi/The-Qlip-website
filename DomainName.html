@@ -303,3 +303,40 @@
     });
   </script>
   
+  <script>
+    // Open Feedback Modal
+    const feedbackLink = document.getElementById('feedback-link');
+    const feedbackModal = document.getElementById('feedbackModal');
+    const closeFeedbackButton = document.querySelector('.close-feedback-button');
+  
+    feedbackLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      feedbackModal.style.display = 'block';
+    });
+  
+    closeFeedbackButton.addEventListener('click', function() {
+      feedbackModal.style.display = 'none';
+    });
+  
+    window.addEventListener('click', function(e) {
+      if (e.target == feedbackModal) {
+        feedbackModal.style.display = 'none';
+      }
+    });
+  
+    // Send Feedback Form via EmailJS
+    const feedbackForm = document.getElementById('feedback-form');
+    
+    feedbackForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_v6i6ioh', 'template_ylm5m4q', this)
+        .then(function() {
+          alert('Thank you for your feedback! We appreciate your input.');
+          feedbackForm.reset();
+          feedbackModal.style.display = 'none';
+        }, function(error) {
+          alert('Oops! Something went wrong. Please try again.');
+        });
+    });
+  </script>
