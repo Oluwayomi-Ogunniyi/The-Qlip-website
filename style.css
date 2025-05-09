@@ -749,7 +749,7 @@ Hamburger Menu (Mobile Navigation)
   }
 
   nav {
-    display: none;
+    display: block;
     width: 100%;
     background-color: hsl(165, 94%, 87%);
     position: absolute;
@@ -775,10 +775,7 @@ Hamburger Menu (Mobile Navigation)
     width: 100%;
     text-align: center;
   }
-
-  .nav-menu.active {
-    display: flex;
-  }
+  
 
   .cta-button {
     margin: 10px auto 0;
@@ -868,6 +865,16 @@ Hamburger Menu (Mobile Navigation)
 @media (max-width: 1024px) {
   .close-menu {
     display: block;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
   }
 }
 
