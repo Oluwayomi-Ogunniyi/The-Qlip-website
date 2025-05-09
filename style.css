@@ -776,6 +776,10 @@ Hamburger Menu (Mobile Navigation)
     text-align: center;
   }
 
+  .nav-menu.active {
+    display: flex;
+  }
+
   .cta-button {
     margin: 10px auto 0;
   }
