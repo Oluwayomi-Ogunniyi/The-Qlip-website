@@ -298,6 +298,22 @@
     });
   });
 </script>
+<script>
+  const hamburger = document.getElementById('hamburger-icon');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('menu-overlay');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+</script>
+
   
 </body>
 
