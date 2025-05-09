@@ -107,31 +107,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Header hamburger toggle for mobile nav
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const sideMenu = document.getElementById('sideMenu');
-    const closeMenu = document.getElementById('closeMenu');
-  
-    hamburger.addEventListener('click', () => {
-      sideMenu.classList.add('active');
-    });
-  
-    closeMenu.addEventListener('click', () => {
-      sideMenu.classList.remove('active');
-    });
-  
-    window.addEventListener('click', (event) => {
-      if (event.target === sideMenu) {
-        sideMenu.classList.remove('active');
-      }
-    });
-  
-    // Close side menu on link click (optional)
-    document.querySelectorAll('#sideMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        sideMenu.classList.remove('active');
-      });
-    });
-  });
-  

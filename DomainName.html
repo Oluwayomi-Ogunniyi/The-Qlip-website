@@ -20,8 +20,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-left: 50px;
-      padding-right: 70px;
+      padding-left: 20px;
+      padding-right: 30px;
     }
 
     .header-logo {
@@ -188,6 +188,11 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
       .hero h1 {
         font-size: 2.2rem;
       }

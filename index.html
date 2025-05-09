@@ -17,45 +17,37 @@
 <body>
 
     <header>
-  <div class="header-logo">
-    <img src="images/logo.png" alt="The Qlip Logo" class="logo-image">
-  </div>
-
-  <!-- Hamburger Icon (visible on mobile) -->
-  <div class="hamburger" id="hamburger">
-    <i class="fas fa-bars"></i>
-  </div>
-
-  <!-- Slide-in Side Menu (right-aligned) -->
-  <nav class="side-menu" id="sideMenu">
-    <span class="close-menu" id="closeMenu">&times;</span>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li class="dropdown">
-        <a href="#">Products <span class="arrow">&#9662;</span></a>
-        <ul class="dropdown-menu">
-          <li><a href="WebsiteTemplate.html">Website Templates</a></li>
-          <li><a href="WebsiteBuilder.html">Website Builder</a></li>
-          <li><a href="WebsiteDesign.html">Website Design</a></li>
-          <li><a href="WebsiteHosting.html">Web Hosting</a></li>
-          <li><a href="DomainName.html">Domain Names</a></li>
-          <li><a href="WebsiteAccessibility.html">Website Accessibility</a></li>
-          <li><a href="GraphicDesign.html">Graphic Design</a></li>
-          <li><a href="MotionGraphics.html">Motion Graphics</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#">Contact <span class="arrow">&#9662;</span></a>
-        <ul class="dropdown-menu">
-          <li><a href="https://wa.me/2347087342882">Customer Service</a></li>
-          <li><a href="#" id="feedback-link-slide">Feedbacks & Complains</a></li>
-        </ul>
-      </li>
-      <li><button class="cta-button">Get Started</button></li>
-    </ul>
-  </nav>
-</header>
-
+        <div class="header-logo">
+            <img src="images/logo.png" alt="The Qlip Logo" class="logo-image">
+          </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home <span class="dot">&#8226;</span></a></li>
+                <li class="dropdown">
+                    <a href="#">Products <span class="arrow">&#9662;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="WebsiteTemplate.html">Website Templates</a></li>
+                        <li><a href="WebsiteBuilder.html">Website Builder</a></li>
+                        <li><a href="WebsiteDesign.html">Website Design</a></li>
+                        <li><a href="WebsiteHosting.html">Web Hosting</a></li>
+                        <li><a href="DomainName.html">Domain Names</a></li>
+                        <li><a href="WebsiteAccessibility.html">Website Accessibility</a></li>
+                        <li><a href="GraphicDesign.html">Graphic Design</a></li>
+                        <li><a href="MotionGraphics.html">Motion Graphics</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#">Contact <span class="arrow">&#9662;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://wa.me/2347087342882">Customer Service</a></li>
+                        <li><a href="#" id="feedback-link">Feedbacks & Complains</a></li>
+                    </ul>
+                </li>
+                <li><button class="cta-button">Get Started</button></li>
+            </ul>
+        </nav>
+    </header>
 
     <section class="hero">
         <video autoplay muted loop playsinline class="hero-video">
@@ -243,39 +235,32 @@
   </div>
 
   <script>
-  // Feedback Modal Elements
-  const feedbackLink = document.getElementById('feedback-link') || document.getElementById('feedback-link-slide');
-  const feedbackModal = document.getElementById('feedbackModal');
-  const closeFeedbackButton = document.querySelector('.close-feedback-button');
-  const feedbackForm = document.getElementById('feedback-form');
-
-  // Open Feedback Modal
-  if (feedbackLink) {
+    // Open Feedback Modal
+    const feedbackLink = document.getElementById('feedback-link');
+    const feedbackModal = document.getElementById('feedbackModal');
+    const closeFeedbackButton = document.querySelector('.close-feedback-button');
+  
     feedbackLink.addEventListener('click', function(e) {
       e.preventDefault();
       feedbackModal.style.display = 'block';
     });
-  }
-
-  // Close Feedback Modal
-  if (closeFeedbackButton) {
+  
     closeFeedbackButton.addEventListener('click', function() {
       feedbackModal.style.display = 'none';
     });
-  }
-
-  // Close Modal on Outside Click
-  window.addEventListener('click', function(e) {
-    if (e.target === feedbackModal) {
-      feedbackModal.style.display = 'none';
-    }
-  });
-
-  // Send Feedback Form
-  if (feedbackForm) {
+  
+    window.addEventListener('click', function(e) {
+      if (e.target == feedbackModal) {
+        feedbackModal.style.display = 'none';
+      }
+    });
+  
+    // Send Feedback Form via EmailJS
+    const feedbackForm = document.getElementById('feedback-form');
+    
     feedbackForm.addEventListener('submit', function(e) {
       e.preventDefault();
-
+  
       emailjs.sendForm('service_v6i6ioh', 'template_ylm5m4q', this)
         .then(function() {
           alert('Thank you for your feedback! We appreciate your input.');
@@ -285,35 +270,7 @@
           alert('Oops! Something went wrong. Please try again.');
         });
     });
-  }
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-
-    hamburger.addEventListener('click', function () {
-      nav.classList.toggle('active');
-    });
-  });
-</script>
-<script>
-  const hamburger = document.getElementById('hamburger-icon');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const overlay = document.getElementById('menu-overlay');
-
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    overlay.classList.toggle('active');
-  });
-
-  overlay.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
-    overlay.classList.remove('active');
-  });
-</script>
-
+  </script>
   
 </body>
 
