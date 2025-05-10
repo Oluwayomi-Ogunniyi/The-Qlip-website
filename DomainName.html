@@ -6,6 +6,7 @@
   <title>Domain Names | The Qlip</title>
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* [Your existing CSS here — unchanged] */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -13,218 +14,70 @@
       color: #222;
     }
 
-    /* Header */
-    header {
-      background-color: #b7fff4;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+    /* ... existing styles ... */
 
-    .header-logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-image {
-      height: 80px;
-      width: auto;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-    }
-
-    nav ul li {
-      position: relative;
-      margin: 0 1rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: rgb(4, 99, 99);
-      font-weight: bold;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: rgb(2, 48, 48);
-    }
-
-    .dropdown-menu.show {
-    display: block;
-    }
-
-
-    .dropdown-menu {
+    /* Feedback Modal Styles */
+    .modal {
       display: none;
-      position: absolute;
-      background-color: rgb(88, 86, 86);
-      top: 100%;
+      position: fixed;
+      z-index: 1000;
       left: 0;
-      min-width: 160px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 5px;
-      z-index: 10;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
     }
 
-    .dropdown-menu li {
-      margin: 0;
-    }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 10px;
-      color: hsl(180, 7%, 97%);
-      font-size: small;
-    }
-
-    .dropdown-menu a:hover {
-      background-color: hsla(177, 100%, 78%, 0.418);
-      color: white;
-    }
-
-    #feedbackModal .form-group {
-    margin-bottom: 15px;
-  }
-  
-  #feedbackModal input,
-  #feedbackModal textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  input, select, textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-
-    /* Hero Section */
-    .hero {
-      background: url('images/Domain-name.jpg') no-repeat center center/cover;
-      height: 70vh;
-      color: #fff;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
       padding: 2rem;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-
-    .hero h1, .hero p {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-    }
-
-    /* Sections */
-    .section {
-      padding: 3rem 2rem;
-      background-color: #e0fdf8;
-      margin: 2rem auto;
+      border-radius: 10px;
       width: 90%;
-      max-width: 1100px;
-      border-radius: 16px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      max-width: 500px;
+      position: relative;
     }
 
-    .section h2 {
-      color: rgb(4, 99, 99);
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    .modal-content h2 {
+      margin-top: 0;
+      color: #046363;
     }
 
-    .section p, .section ul {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .features li, .usecases li {
-      margin-bottom: 0.75rem;
-    }
-
-    /* CTA */
-    .cta {
-      text-align: center;
-      margin: 3rem 0;
-    }
-
-    .cta button {
-      background-color: rgb(4, 99, 99);
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 8px;
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
     }
 
-    .cta button:hover {
-      background-color: rgb(2, 48, 48);
-      transform: scale(1.05);
+    .modal-content input, 
+    .modal-content textarea, 
+    .modal-content button {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background-color: rgb(4, 65, 65);
+    .modal-content button {
+      background-color: #046363;
       color: white;
-      font-size: 0.9rem;
+      border: none;
+      font-weight: bold;
+      transition: background 0.3s;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      
-      .hero h1 {
-        font-size: 2.2rem;
-      }
+    .modal-content button:hover {
+      background-color: #023030;
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="header-logo">
@@ -257,7 +110,6 @@
     </nav>
   </header>
 
-  <!-- Domain Names Section -->
   <section class="hero">
     <h1>Domain Names</h1>
     <p>Secure your brand identity online with the perfect domain name.</p>
@@ -293,75 +145,79 @@
   <footer>
     &copy; 2025 The Qlip. All rights reserved.
   </footer>
-</body>
-</html>
 
-<script>
-    // Get all dropdown links
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <h2>Feedback & Complaints</h2>
+      <form id="feedback-form">
+        <input type="text" name="user_name" placeholder="Your Name" required>
+        <input type="email" name="user_email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Feedback or Complaint" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init('YOUR_USER_ID'); // Replace with your EmailJS user ID
+
+    const feedbackLink = document.getElementById('feedback-link');
+    const modal = document.getElementById('feedback-modal');
+    const closeModal = document.getElementById('close-modal');
+    const form = document.getElementById('feedback-form');
+
+    feedbackLink.addEventListener('click', e => {
+      e.preventDefault();
+      modal.style.display = 'block';
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(() => {
+          alert('Feedback sent successfully!');
+          form.reset();
+          modal.style.display = 'none';
+        }, (error) => {
+          alert('Failed to send feedback. Please try again later.');
+          console.error(error);
+        });
+    });
+  </script>
+
+  <script>
+    // Dropdown toggle logic
     const dropdownLinks = document.querySelectorAll('.dropdown > a');
-  
     dropdownLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent "#" from navigating
-  
+        e.preventDefault();
         const dropdownMenu = this.nextElementSibling;
-  
-        // Close other open dropdowns first
         document.querySelectorAll('.dropdown-menu').forEach(menu => {
-          if (menu !== dropdownMenu) {
-            menu.classList.remove('show');
-          }
+          if (menu !== dropdownMenu) menu.classList.remove('show');
         });
-  
-        // Toggle the clicked dropdown
         dropdownMenu.classList.toggle('show');
       });
     });
-  
-    // Optional: Close dropdown when clicking outside
+
     window.addEventListener('click', function(e) {
       if (!e.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-          menu.classList.remove('show');
-        });
+        document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('show'));
       }
     });
   </script>
-  
-  <script>
-    // Open Feedback Modal
-    const feedbackLink = document.getElementById('feedback-link');
-    const feedbackModal = document.getElementById('feedbackModal');
-    const closeFeedbackButton = document.querySelector('.close-feedback-button');
-  
-    feedbackLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      feedbackModal.style.display = 'block';
-    });
-  
-    closeFeedbackButton.addEventListener('click', function() {
-      feedbackModal.style.display = 'none';
-    });
-  
-    window.addEventListener('click', function(e) {
-      if (e.target == feedbackModal) {
-        feedbackModal.style.display = 'none';
-      }
-    });
-  
-    // Send Feedback Form via EmailJS
-    const feedbackForm = document.getElementById('feedback-form');
-    
-    feedbackForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-  
-      emailjs.sendForm('service_v6i6ioh', 'template_ylm5m4q', this)
-        .then(function() {
-          alert('Thank you for your feedback! We appreciate your input.');
-          feedbackForm.reset();
-          feedbackModal.style.display = 'none';
-        }, function(error) {
-          alert('Oops! Something went wrong. Please try again.');
-        });
-    });
-  </script>
+</body>
+</html>
