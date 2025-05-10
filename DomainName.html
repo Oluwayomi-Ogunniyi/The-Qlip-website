@@ -110,17 +110,17 @@
   padding: 2rem;
   border-radius: 10px;
   width: 90%;
-  max-width: 500px;
+  max-width: 400px;
   position: relative;
 }
 
 .modal-content h2 {
   margin-top: 0;
-  color: #046363;
+  color: hsl(0, 0%, 0%);
 }
 
 .close {
-  color: #aaa;
+  color: hsl(0, 0%, 0%);
   position: absolute;
   top: 15px;
   right: 20px;
@@ -144,6 +144,8 @@
   color: white;
   border: none;
   font-weight: bold;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .modal-content button:hover {
@@ -321,7 +323,7 @@
   </section>
 
   <section class="cta">
-    <button onclick="window.location.href='contact.html'">Let's Work</button>
+    <button id="lets-work-btn">Let's Work</button>
   </section>
 
   <footer>
@@ -339,6 +341,25 @@
       <textarea name="message" rows="5" placeholder="Your Feedback or Complaint" required></textarea>
       <button type="submit">Send</button>
     </form>
+  </div>
+</div>
+<!-- Let's Work Modal -->
+<div id="lets-work-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="close-work-modal">&times;</span>
+    <h2>Let's Work Together</h2>
+    <form id="lets-work-form">
+      <input type="text" name="user_name" placeholder="Your Name" required>
+      <input type="email" name="user_email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+    <div style="text-align: center; margin-top: 1rem;">
+      <p>Or connect via:</p>
+      <a href="https://wa.me/2347087342882" target="_blank" style="margin: 0 8px;">WhatsApp</a> |
+      <a href="https://instagram.com/theqlip" target="_blank" style="margin: 0 8px;">Instagram</a> |
+      <a href="https://linkedin.com/in/theqlip" target="_blank" style="margin: 0 8px;">LinkedIn</a>
+    </div>
   </div>
 </div>
 
@@ -414,6 +435,40 @@
         modal.style.display = 'none';
       }, function(error) {
         alert('Failed to send feedback.');
+        console.error(error);
+      });
+  });
+</script>
+<!-- Let's Work Modal Script -->
+<script>
+  const letsWorkBtn = document.getElementById('lets-work-btn');
+  const letsWorkModal = document.getElementById('lets-work-modal');
+  const closeWorkModal = document.getElementById('close-work-modal');
+  const letsWorkForm = document.getElementById('lets-work-form');
+
+  letsWorkBtn.addEventListener('click', function () {
+    letsWorkModal.style.display = 'block';
+  });
+
+  closeWorkModal.addEventListener('click', function () {
+    letsWorkModal.style.display = 'none';
+  });
+
+  window.addEventListener('click', function (e) {
+    if (e.target === letsWorkModal) {
+      letsWorkModal.style.display = 'none';
+    }
+  });
+
+  letsWorkForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+      .then(function () {
+        alert('Request sent successfully!');
+        letsWorkForm.reset();
+        letsWorkModal.style.display = 'none';
+      }, function (error) {
+        alert('Failed to send request.');
         console.error(error);
       });
   });
