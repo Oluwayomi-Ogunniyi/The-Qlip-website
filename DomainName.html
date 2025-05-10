@@ -6,7 +6,6 @@
   <title>Domain Names | The Qlip</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* [Your existing CSS here — unchanged] */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -14,70 +13,193 @@
       color: #222;
     }
 
-    /* ... existing styles ... */
-
-    /* Feedback Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.6);
+    /* Header */
+    header {
+      background-color: #b7fff4;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 2rem;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 500px;
+    .header-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-image {
+      height: 80px;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li {
       position: relative;
+      margin: 0 1rem;
     }
 
-    .modal-content h2 {
-      margin-top: 0;
-      color: #046363;
-    }
-
-    .close {
-      color: #aaa;
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 1.5rem;
+    nav a {
+      text-decoration: none;
+      color: rgb(4, 99, 99);
       font-weight: bold;
-      cursor: pointer;
-    }
-
-    .modal-content input, 
-    .modal-content textarea, 
-    .modal-content button {
-      width: 100%;
-      margin: 0.5rem 0;
-      padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
       font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
-    .modal-content button {
-      background-color: #046363;
+    nav a:hover {
+      color: rgb(2, 48, 48);
+    }
+
+    .dropdown-menu.show {
+    display: block;
+    }
+
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: rgb(88, 86, 86);
+      top: 100%;
+      left: 0;
+      min-width: 160px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      z-index: 10;
+    }
+
+    .dropdown-menu li {
+      margin: 0;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px;
+      color: hsl(180, 7%, 97%);
+      font-size: small;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: hsla(177, 100%, 78%, 0.418);
       color: white;
-      border: none;
-      font-weight: bold;
-      transition: background 0.3s;
     }
 
-    .modal-content button:hover {
-      background-color: #023030;
+    /* Hero Section */
+    .hero {
+      background: url('images/Domain-name.jpg') no-repeat center center/cover;
+      height: 70vh;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 2rem;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    /* Sections */
+    .section {
+      padding: 3rem 2rem;
+      background-color: #e0fdf8;
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 1100px;
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    }
+
+    .section h2 {
+      color: rgb(4, 99, 99);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p, .section ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .features li, .usecases li {
+      margin-bottom: 0.75rem;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .cta button {
+      background-color: rgb(4, 99, 99);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .cta button:hover {
+      background-color: rgb(2, 48, 48);
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: rgb(4, 65, 65);
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="header-logo">
@@ -110,6 +232,7 @@
     </nav>
   </header>
 
+  <!-- Domain Names Section -->
   <section class="hero">
     <h1>Domain Names</h1>
     <p>Secure your brand identity online with the perfect domain name.</p>
@@ -145,79 +268,39 @@
   <footer>
     &copy; 2025 The Qlip. All rights reserved.
   </footer>
+</body>
+</html>
 
-  <!-- Feedback Modal -->
-  <div id="feedback-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="close-modal">&times;</span>
-      <h2>Feedback & Complaints</h2>
-      <form id="feedback-form">
-        <input type="text" name="user_name" placeholder="Your Name" required>
-        <input type="email" name="user_email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Feedback or Complaint" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    emailjs.init('YOUR_USER_ID'); // Replace with your EmailJS user ID
-
-    const feedbackLink = document.getElementById('feedback-link');
-    const modal = document.getElementById('feedback-modal');
-    const closeModal = document.getElementById('close-modal');
-    const form = document.getElementById('feedback-form');
-
-    feedbackLink.addEventListener('click', e => {
-      e.preventDefault();
-      modal.style.display = 'block';
-    });
-
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', e => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-        .then(() => {
-          alert('Feedback sent successfully!');
-          form.reset();
-          modal.style.display = 'none';
-        }, (error) => {
-          alert('Failed to send feedback. Please try again later.');
-          console.error(error);
-        });
-    });
-  </script>
-
-  <script>
-    // Dropdown toggle logic
+<script>
+    // Get all dropdown links
     const dropdownLinks = document.querySelectorAll('.dropdown > a');
+  
     dropdownLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent "#" from navigating
+  
         const dropdownMenu = this.nextElementSibling;
+  
+        // Close other open dropdowns first
         document.querySelectorAll('.dropdown-menu').forEach(menu => {
-          if (menu !== dropdownMenu) menu.classList.remove('show');
+          if (menu !== dropdownMenu) {
+            menu.classList.remove('show');
+          }
         });
+  
+        // Toggle the clicked dropdown
         dropdownMenu.classList.toggle('show');
       });
     });
-
+  
+    // Optional: Close dropdown when clicking outside
     window.addEventListener('click', function(e) {
       if (!e.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('show'));
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          menu.classList.remove('show');
+        });
       }
     });
   </script>
-</body>
-</html>
+  
+  
